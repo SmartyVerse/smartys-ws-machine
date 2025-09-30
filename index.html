@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART UNLIMITED WHATS APP EXTRACTOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row-container">
+
+        <div class="row">
+            <h2>Your Favorites 💜</h2>
+            <div id="favoritesList" class="checked-numbers-container">
+                <p class="no-favorites">No numbers have been favorited yet.</p>
+            </div>
+            <button id="downloadFavoritesPdfBtn" class="download-button" style="display: none;">Download Favorites as PDF</button>
+        </div>
+        <hr>
+
+        <div class="row">
+            <h2>Working Numbers ✅</h2>
+            <div id="workingList" class="checked-numbers-container">
+                <p class="no-favorites">No numbers marked 'WORKING' yet.</p>
+            </div>
+            <button id="downloadWorkingPdfBtn" class="download-button" style="display: none;">Download Working List as PDF</button>
+        </div>
+        <hr>
+
+        <div class="row">
+            <h1>Smartys Ultimate WS Machine</h1>
+        </div>
+        <hr>
+
+        <div class="row">
+            <p>Upload a text (.txt) file to extract and track phone numbers.</p>
+            <input type="file" id="fileInput" accept=".txt">
+        </div>
+        <hr>
+
+        <div class="row">
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
