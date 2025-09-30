@@ -1,9 +1,9 @@
 /* --- Connect Me Button Styling --- */
 .connect-row {
-    /* Use max-width for alignment with main rows */
+    /* Align the button's container width with the main content rows */
     width: 90%;
-    max-width: 800px; 
-    /* Center the block element */
+    max-width: 900px; /* Aligned with .row-container max-width */
+    /* Center the block, and add vertical margin */
     margin: 0 auto 25px auto; 
     /* Center the inline button inside the block */
     text-align: center; 
@@ -40,16 +40,14 @@ body {
     margin: 0;
     padding: 20px 0;
     min-height: 100vh;
-    /* Changed display to flex-start so content starts from the top */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligns content to the top */ 
+    align-items: flex-start;
 }
 
 .row-container {
     width: 90%;
-    /* Reduced max-width slightly for better visual alignment with button row */
-    max-width: 800px; 
+    max-width: 900px; /* This width is used for alignment */
     display: flex;
     flex-direction: column;
     gap: 20px;
