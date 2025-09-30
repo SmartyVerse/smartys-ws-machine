@@ -2,7 +2,7 @@
 .connect-row {
     /* Align the button's container width with the main content rows */
     width: 90%;
-    max-width: 900px; /* Aligned with .row-container max-width */
+    max-width: 900px; 
     /* Center the block, and add vertical margin */
     margin: 0 auto 25px auto; 
     /* Center the inline button inside the block */
@@ -41,13 +41,16 @@ body {
     padding: 20px 0;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    /* FIX: Stack items vertically (button above row-container) */
+    flex-direction: column; 
+    /* Center all children (button row and row-container) horizontally */
+    align-items: center; 
+    justify-content: flex-start; /* Start content from the top */
 }
 
 .row-container {
     width: 90%;
-    max-width: 900px; /* This width is used for alignment */
+    max-width: 900px; 
     display: flex;
     flex-direction: column;
     gap: 20px;
