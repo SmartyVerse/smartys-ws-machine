@@ -1,7 +1,7 @@
-/* Global Styles and Transitions */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern Font */
-    background-color: #1a1a1a; /* Almost Black */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #1a1a1a; 
     color: #f0f0f0;
     margin: 0;
     padding: 20px 0;
@@ -13,24 +13,24 @@ body {
 
 .row-container {
     width: 90%;
-    max-width: 900px; /* Slightly wider container */
+    max-width: 900px; 
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Reduced gap for cohesion */
+    gap: 20px; 
     text-align: center;
 }
 
-/* Base Row Styling */
+
 .row {
     padding: 25px;
-    border-radius: 12px; /* Smoother corners */
-    background-color: #282828; /* Charcoal Gray */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    border-radius: 12px; 
+    background-color: #282828; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); 
     transition: box-shadow 0.3s ease-in-out;
 }
 
 .row:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Subtle lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); 
 }
 
 hr {
@@ -41,7 +41,7 @@ hr {
 }
 
 h1, h2 {
-    color: #e5c100; /* Antique Gold */
+    color: #e5c100; 
     margin: 0;
 }
 
@@ -59,7 +59,6 @@ p {
     transition: border-color 0.3s;
 }
 
-/* --- Phone Number List Styles --- */
 #result {
     padding: 10px;
 }
@@ -69,12 +68,12 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #3a3a3a; /* Lighter separator */
+    border-bottom: 1px solid #3a3a3a; 
     transition: background-color 0.2s;
 }
 
 .phone-number-container:hover {
-    background-color: #303030; /* Highlight row on hover */
+    background-color: #303030; 
 }
 
 .phone-number-container:last-child {
@@ -90,47 +89,44 @@ p {
     gap: 10px;
 }
 
-/* --- Button Base Styles --- */
 .phone-number-container button {
-    padding: 8px 12px; /* Larger buttons */
+    padding: 8px 12px; 
     cursor: pointer;
     color: white;
     border: none;
-    border-radius: 5px; /* Smoother button corners */
-    transition: background-color 0.3s ease, transform 0.1s ease; /* Transition added */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease; 
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .phone-number-container button:active {
-    transform: translateY(1px); /* Push effect on click */
+    transform: translateY(1px); 
 }
 
-/* Copy Button */
+
 .copy-button {
-    background-color: #5d3fd3; /* Deep Purple */
+    background-color: #5d3fd3; 
 }
 .copy-button:hover {
     background-color: #4a34b2;
 }
 
-/* Status Button - Colors */
 .status-button.dead {
-    background-color: #cc0000; /* RED for DEAD */
+    background-color: #cc0000; 
 }
 .status-button.working {
-    background-color: #008000; /* GREEN for WORKING */
+    background-color: #008000; 
 }
 .status-button:hover {
     filter: brightness(1.15);
 }
 
-/* Heart Button Styling */
 .heart-button {
     background: none;
     border: none;
     padding: 5px;
-    font-size: 1.4em; /* Slightly larger icon */
+    font-size: 1.4em; 
 }
 
 .heart-button.unchecked {
@@ -138,15 +134,14 @@ p {
 }
 
 .heart-button.checked {
-    color: #e5c100; /* Gold */
+    color: #e5c100; 
 }
 
-/* --- Favorites Section Styling --- */
 #favoritesList, #workingList {
     margin-top: 15px;
     padding: 10px;
     border: 1px solid #5d3fd3;
-    border-radius: 8px; /* Smoother border */
+    border-radius: 8px; 
     background-color: #333333;
     max-height: 150px;
     overflow-y: auto;
@@ -169,7 +164,7 @@ p {
 .download-button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #e5c100; /* Use Gold for download buttons */
+    background-color: #e5c100; 
     color: #1a1a1a;
     border: none;
     border-radius: 5px;
@@ -180,8 +175,9 @@ p {
 }
 
 .download-button:hover {
-    background-color: #d1b100; /* Darker gold on hover */
+    background-color: #d1b100; 
 }
 .download-button:active {
     transform: translateY(1px);
+
 }
