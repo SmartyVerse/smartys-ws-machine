@@ -38,12 +38,14 @@ function extractAndDisplayNumbers(text) {
 
     if (matches && matches.length > 0) {
         const uniqueNumbers = [...new Set(matches)];
-       
+        
+        
         uniqueNumbers.forEach((number, index) => {
             if (!numberStatuses.has(number)) {
                 numberStatuses.set(number, 'DEAD');
             }
             
+    
             const numberDiv = createNumberContainer(number, index + 1); 
             resultDiv.appendChild(numberDiv);
         });
@@ -61,7 +63,7 @@ function createNumberContainer(number, srNo) {
     
     const buttonGroup = document.createElement('div');
     buttonGroup.className = 'button-group';
-   
+    
     const copyButton = document.createElement('button');
     copyButton.textContent = 'Copy';
     copyButton.className = 'copy-button';
@@ -72,6 +74,7 @@ function createNumberContainer(number, srNo) {
         });
     };
 
+   
     const statusButton = document.createElement('button');
     let currentStatus = numberStatuses.get(number);
     
@@ -208,15 +211,19 @@ function downloadListAsPdf(numberSet, listName) {
             doc.addPage();
             y = 15;
         }
+        
         let line = `${srNo++}. ${number}`;
         
         if (listName === 'Favorites') {
             const status = numberStatuses.get(number) || 'DEAD';
             line += ` [Status: ${status}]`;
         }
+        
         doc.text(line, 20, y);
         y += 7;
     });
+
     doc.save(`${listName.toLowerCase()}_phone_numbers.pdf`);
 }
+
 updateListsDisplay();
