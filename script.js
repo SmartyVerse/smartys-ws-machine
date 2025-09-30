@@ -38,14 +38,12 @@ function extractAndDisplayNumbers(text) {
 
     if (matches && matches.length > 0) {
         const uniqueNumbers = [...new Set(matches)];
-        
-        // Loop through unique numbers and assign an index (Sr No.)
+       
         uniqueNumbers.forEach((number, index) => {
             if (!numberStatuses.has(number)) {
                 numberStatuses.set(number, 'DEAD');
             }
             
-            // Pass the serial number (index + 1) to the creation function
             const numberDiv = createNumberContainer(number, index + 1); 
             resultDiv.appendChild(numberDiv);
         });
@@ -54,19 +52,16 @@ function extractAndDisplayNumbers(text) {
     }
 }
 
-// Updated: Accepts SrNo as an argument
 function createNumberContainer(number, srNo) {
     const numberDiv = document.createElement('div');
     numberDiv.className = 'phone-number-container';
 
-    // Display the Serial Number followed by the phone number
     const numberSpan = document.createElement('span');
     numberSpan.innerHTML = `<strong>${srNo}.</strong> ${number}`;
     
     const buttonGroup = document.createElement('div');
     buttonGroup.className = 'button-group';
-    
-    // 1. Copy Button
+   
     const copyButton = document.createElement('button');
     copyButton.textContent = 'Copy';
     copyButton.className = 'copy-button';
@@ -77,7 +72,6 @@ function createNumberContainer(number, srNo) {
         });
     };
 
-    // 2. Status Button (DEAD/WORKING Toggle)
     const statusButton = document.createElement('button');
     let currentStatus = numberStatuses.get(number);
     
@@ -95,7 +89,6 @@ function createNumberContainer(number, srNo) {
         updateListsDisplay();
     };
 
-    // 3. Heart Button (Favorite Toggle)
     const heartButton = document.createElement('button');
     const isChecked = checkedNumbers.has(number);
     heartButton.className = `heart-button ${isChecked ? 'checked' : 'unchecked'}`;
@@ -126,7 +119,7 @@ function createNumberContainer(number, srNo) {
     return numberDiv;
 }
 
-// --- Combined Update Function ---
+
 function updateListsDisplay() {
     updateFavoritesDisplay();
     updateWorkingDisplay();
@@ -215,20 +208,15 @@ function downloadListAsPdf(numberSet, listName) {
             doc.addPage();
             y = 15;
         }
-        
         let line = `${srNo++}. ${number}`;
         
         if (listName === 'Favorites') {
             const status = numberStatuses.get(number) || 'DEAD';
             line += ` [Status: ${status}]`;
         }
-        
         doc.text(line, 20, y);
         y += 7;
     });
-
     doc.save(`${listName.toLowerCase()}_phone_numbers.pdf`);
 }
-
-// Initialize the display when the script loads
 updateListsDisplay();
